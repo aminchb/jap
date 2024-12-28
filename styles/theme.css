@@ -1,0 +1,48 @@
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, sans-serif;
+    color: #eee;
+    text-decoration: none;
+    box-shadow: none;
+    border: none;
+}
+
+.show {
+    display: flex;
+}
+
+.hidden {
+    display: none;
+}
+
+body {
+    height: 100vh;
+    background: linear-gradient(to bottom, #223, #334, #223);
+
+}
+
+body > * {
+    padding : 10px;
+}
+
+.logo-text {
+    display: flex;
+}
+
+.logo {
+    height: 30px;
+    margin-right: 5px;
+}
+
+main {
+    height: calc(100vh - 70px);
+    display: flex;   
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
