@@ -1,6 +1,6 @@
 // DONE.
-import { LOAD } from "./load";
-import { TO_MAP } from "./load";
+import { LOAD } from "./load.js";
+import { TO_MAP } from "./load.js";
 
 // VARIABLES :
 let keyboard = {
