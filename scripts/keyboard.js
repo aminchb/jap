@@ -17,6 +17,7 @@ async function LOAD_KEYBOARD(){
     keyboard.katakana = await TO_MAP(LOAD("vocab/katakana.csv"));
     keyboard.kanji = await TO_MAP(LOAD("vocab/kanji.csv"));
     keyboard.verbes = await TO_MAP(LOAD("vocab/verbes.csv"));
+    console.log("keyboard loaded successfully :\n" + keyboard);
 }
 
 // KEYBOARD : 
