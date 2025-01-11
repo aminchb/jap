@@ -1,7 +1,5 @@
 // DONE : !
 
-import { object } from "firebase-functions/v1/storage";
-
 // CHARGE DATA pour QUIZ & CLAVIER :
 // @param chemin : 1 STRING indiquant le chemin du fichier csv.
 // =>return : un TABLEAU d'OBJETS QUELCONQUE*.
@@ -74,7 +72,7 @@ export function TO_SET(objets) {
 //                 - {romaji, kanji, kana, trad, picto}
 // @return : Une Map où :
 //           - La clé est la propriété `romaji` (de type String).
-//           - La valeur est un tableau :
+//           - La valeur est un tableau de String de structure :
 //             - [kana] (si l'objet est de structure {romaji, kana})
 //             - [kana, kanji1, kanji2, ...] (si l'objet est de structure étendue).
 // !disclaimer : TABLEAU*
@@ -83,20 +81,22 @@ export function TO_SET(objets) {
 //                 et non écraser ce dernier.
 export function TO_MAP(objets) {
     const map = new Map();
-    objets.forEach(objet => {
-        const romaji = objet.romaji; // La clé commune
+    for (const obj of objets) {
+        const romaji = obj.romaji;
+        const kana = obj.kana;
+
         // KANJI DEJA PRESENT :
-        if ('kanji' in  object && map.has(romaji)) {
-            map.set(romaji, [...map.get(romaji), objet.kanji]);
+        if ('kanji' in  obj && map.has(romaji)) {
+            map.set(romaji, [...map.get(romaji), obj.kanji]);
         } 
         // KANJI ABSENT :
-        else if('kanji' in  object){
-            map.set(romaji, [object.kana, object.kanji]);
+        else if ('kanji' in  obj) {
+            map.set(romaji, [obj.kana, obj.kanji]);
         }
-        // KANA : 
+        // KANA :
         else {
-            map.set(romaji, [object.kana]);
+            map.set(romaji, [obj.kana]);
         }
-    });
+    }
     return map;
 }

@@ -1,11 +1,21 @@
-import { VERSION } from "./version.js";
+import { TO_MAP } from "./load.js";
+
+const data = [
+    { romaji: "ai", kana: "あい" },
+    { romaji: "ai", kana: "あい", kanji: "愛" },
+    { romaji: "ai", kana: "あい", kanji: "哀" },
+    { romaji: "kaze", kana: "かぜ", kanji: "風" }
+];
+
+console.log(TO_MAP(objets));
+
 
 window.onload = async function() {
-    console.log("Initializing version...");
+    console.log("TO MAP TEST :\n");
     try {
-        await VERSION();
-        console.log("Version initialized successfully.");
+        let test = TO_MAP(data);
+        console.log("test is equal to :\n" + test);
     } catch (error) {
-        console.error("Error during version initialization:", error);
+        console.error("test failed:\n", error);
     }
 };
