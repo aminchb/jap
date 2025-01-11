@@ -63,4 +63,6 @@ async function test_LOAD() {
     }
 }
 
-window.onload = test_LOAD;
+window.onload = async function() {
+    await test_LOAD();
+}
