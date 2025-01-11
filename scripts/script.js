@@ -7,9 +7,6 @@ const data = [
     { romaji: "kaze", kana: "かぜ", kanji: "風" }
 ];
 
-console.log(TO_MAP(objets));
-
-
 window.onload = async function() {
     console.log("TO MAP TEST :\n");
     try {
