@@ -17,29 +17,44 @@ async function LOAD_KEYBOARD(){
     keyboard.verbes = await TO_MAP(LOAD("vocab/verbes.csv"));
 }
 
+// KEYBOARD : 
+// @param input : une String à traduire.
+// =>return : la String* traduite.
+// !disclaimer : String*
+//               String* : Homonimes possibles.
 function TRADUIT(input){
-    let result = "";
-    let i = 0;
-    const maps = [keyboard.verbes, keyboard.kanji, keyboard.hiragana, keyboard.katakana];
-    while (i < input.length) {
-        let matchFound = false;
-        for (const map of maps) {
-            for (const key of map.keys()) {
-                if (input.slice(i, i + key.length) === key) {
-                    result += map.get(key);
-                    i += key.length;
-                    matchFound = true;
-                    break;
-                }
-            }
-            if (matchFound) break;
-        }
-        if (!matchFound) {
-            result += input[i];
-            i++;
-        }
+   // separe les mots de la phrase : 
+    const mots = input.split(" ");
+    // traduit chaque mot :
+    mots.forEach((mot, index) => {
+        mots[index] = TRADUIT_MOT(mot);
+    });
+}
+
+// TRADUIT_MOT :
+// @param mot : un mot à traduire.
+// =>return : le mot traduit.
+function TRADUIT_MOT(mot){
+    // si le mot est un verbe :
+    if(keyboard.verbes.has(mot)){
+        // HOIMONIMES POSSIBLES !!!!!!!
+        return keyboard.verbes.get(mot)[1];
     }
-    return result;
+    // si le mot est un kanji :
+    if(keyboard.kanji.has(mot)){
+        // HOIMONIMES POSSIBLES !!!!!!!
+        return keyboard.kanji.get(mot)[1];
+    }
+    // si le mot est un hiragana :
+    if(keyboard.hiragana.has(mot)){
+        return keyboard.hiragana.get(mot)[0];
+    }
+    // si le mot est un katakana :
+    if(keyboard.katakana.has(mot)){
+        return keyboard.katakana.get(mot)[0];
+    }
+    // si le mot n'est pas trouvé :
+    return mot;
 }
 
 function updateTranslation() {
