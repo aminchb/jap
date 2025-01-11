@@ -7,11 +7,22 @@ const data = [
     { romaji: "kaze", kana: "かぜ", kanji: "風" }
 ];
 
+function afficherMap(map) {
+    console.log("Contenu de la Map :");
+    for (const [key, values] of map.entries()) {
+        console.log(`- Clé : ${key}`);
+        console.log("  Valeurs :");
+        values.forEach((value, index) => {
+            console.log(`    [${index}] ${value}`);
+        });
+    }
+}
+
 window.onload = async function() {
     console.log("TO MAP TEST :\n");
     try {
         let test = TO_MAP(data);
-        console.log("test is equal to :\n" + test);
+        console.log("test is equal to :\n" + afficherMap(test));
     } catch (error) {
         console.error("test failed:\n", error);
     }
