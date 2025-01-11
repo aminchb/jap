@@ -30,8 +30,8 @@ function test_TO_MAP() {
 
 // LOAD : 
 async function test_LOAD() {
-    const kanji = "../vocab/kanji.csv";
-    const hiragana = "../vocab/hiragana.csv";
+    const kanji = "vocab/kanji.csv";
+    const hiragana = "vocab/hiragana.csv";
     console.log("LOAD TEST :\n");
 
     // Fonction pour afficher le contenu d'un tableau d'objets
