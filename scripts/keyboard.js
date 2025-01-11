@@ -65,6 +65,7 @@ function updateTranslation() {
 }
 
 window.onload = async function() {
+    console.log("loading window...");
     await LOAD_KEYBOARD(); // Assure que les données sont chargées avant d'ajouter l'écouteur
     document.getElementById('input').addEventListener('input', updateTranslation);
 };
