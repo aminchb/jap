@@ -13,6 +13,7 @@ let keyboard = {
 };
 
 async function LOAD_KEYBOARD(){
+    console.log("loading keyboard...");
     keyboard.hiragana = await TO_MAP(LOAD("vocab/hiragana.csv"));
     keyboard.katakana = await TO_MAP(LOAD("vocab/katakana.csv"));
     keyboard.kanji = await TO_MAP(LOAD("vocab/kanji.csv"));
