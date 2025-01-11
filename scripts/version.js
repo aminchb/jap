@@ -1,7 +1,7 @@
 // DONE : ?
 const versionNamePATH = "meta/version";
 
-async function version(){
+export async function VERSION(){
     try {
         const response = await fetch(versionNamePATH);
         if (!response.ok) {
