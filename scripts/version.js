@@ -14,4 +14,6 @@ export async function VERSION(){
     }
 }
 
-window.onload = version;
+/*
+window.onload = VERSION;
+*/
