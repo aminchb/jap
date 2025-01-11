@@ -1,4 +1,9 @@
-# HIRAGANA
+# STRUCTURE :
+romaji,kana
+# romaji : la syllabe en caracteres latins
+# kana : le kana correspondant
+
+# HIRAGANA :
 
 a,あ
 i,い

@@ -1,26 +1,30 @@
 # STRUCTURE :
-romaji,kanji,furigana,picto
+kanji,kana,romaji,trad,picto
+# kanji : le mot en kanji
+# kana : la lecture du mot en hiragana
+# romaji : transcription phonétique du mot en alphabet latin
+# trad : traduction en français
+# picto : emoji ou pictogramme associé au mot
 
 # VOCABULAIRE :
 
-
-hito,人,ひと,personne,🧑
-otoko,男,おとこ,homme,👨
-onna,女,おんな,femme,👩
-ko,子,こ,enfant,🧒
-hi,日,ひ,soleil,🌞
-tsuki,月,つき,lune,🌜
-toki,時,とき,temps,⏰
-mizu,水,みず,eau,💧
-hi,火,ひ,feu,🔥
-tsuchi,土,つち,terre,🌍
-kaze,風,かぜ,vent,💨
-sora,空,そら,ciel,☁️
-yama,山,やま,montagne,⛰️
-kawa,川,かわ,rivière,🌊
-ki,木,き,arbre,🌳
-hana,花,はな,fleur,🌸
-ame,雨,あめ,pluie,🌧️
-yuki,雪,ゆき,neige,❄️
-kane,金,かね,argent,💰
-katana,刀,かたな,sabre,⚔️
+人,ひと,hito,personne,🧑
+男,おとこ,otoko,homme,👨
+女,おんな,onna,femme,👩
+子,こ,ko,enfant,🧒
+日,ひ,hi,soleil,🌞
+火,ひ,hi,feu,🔥
+月,つき,tsuki,lune,🌜
+時,とき,toki,temps,⏰
+水,みず,mizu,eau,💧
+土,つち,tsuchi,terre,🌍
+風,かぜ,kaze,vent,💨
+空,そら,sora,ciel,☁️
+山,やま,yama,montagne,⛰️
+川,かわ,kawa,rivière,🌊
+木,き,ki,arbre,🌳
+花,はな,hana,fleur,🌸
+雨,あめ,ame,pluie,🌧️
+雪,ゆき,yuki,neige,❄️
+金,かね,kane,argent,💰
+刀,かたな,katana,sabre,⚔️

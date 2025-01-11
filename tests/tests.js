@@ -1,7 +1,10 @@
-import { TO_MAP } from "./load.js";
-import { LOAD } from "./load.js";
+// IMPORTS :
+import { VERSION } from "../scripts/version.js";
+import { TO_MAP } from "../scripts/load.js";
+import { LOAD } from "../scripts/load.js";
 
-// TO MAP :
+
+// TESTS : 
 function test_TO_MAP() {
     const data = [
         { romaji: "ai", kana: "あい" },
@@ -27,6 +30,41 @@ function test_TO_MAP() {
         console.error("Test failed:\n", error);
     }
 }
+
+async function test_LOAD() {
+    console.log("LOAD TEST :\n");
+    function afficherTableauObjets(tableau) {
+        if (tableau && tableau.length > 0) {
+            tableau.forEach((obj, index) => {
+                console.log(`Objet ${index + 1}:`);
+                console.log(obj);
+            });
+        } else {
+            console.log("Tableau vide ou invalide");
+        }
+    }
+    try {
+        let test = await LOAD("../vocab/kanji.csv");
+        console.log("test is equal to :\n");
+        afficherTableauObjets(test);
+    } catch (error) {
+        console.error("test failed :\n", error);
+    }
+}
+
+// TESTS CALLS :
+window.onload = async function() {
+    await VERSION();
+    test_TO_MAP();
+    await test_LOAD();
+}
+
+/*
+import { TO_MAP } from "scripts/load.js";
+import { LOAD } from "scripts/load.js";
+
+// TO MAP :
+
 
 // LOAD : 
 async function test_LOAD() {
@@ -66,3 +104,5 @@ async function test_LOAD() {
 window.onload = async function() {
     await test_LOAD();
 }
+
+*/

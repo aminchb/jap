@@ -11,6 +11,7 @@ export async function LOAD(chemin) {
         if (!response.ok) {
             throw new Error(`Erreur réseau : ${response.status} ${response.statusText}`);
         }
+        const data = await response.text();
         return PARSE(data);
     } catch (error) {
         throw new Error(`Erreur lors du chargement distant : ${error.message}`);
