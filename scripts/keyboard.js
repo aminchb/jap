@@ -23,12 +23,9 @@ async function LOAD_KEYBOARD(){
 // !disclaimer : String*
 //               String* : Homonimes possibles.
 function TRADUIT(input){
-   // separe les mots de la phrase : 
-    const mots = input.split(" ");
-    // traduit chaque mot :
-    mots.forEach((mot, index) => {
-        mots[index] = TRADUIT_MOT(mot);
-    });
+    return input.trim().split(/\s+/)
+        .map(mot => TRADUIT_MOT(mot))
+        .join(" ");
 }
 
 // TRADUIT_MOT :
