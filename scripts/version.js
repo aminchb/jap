@@ -1,5 +1,5 @@
 // DONE : ?
-const versionNamePATH = "/TESTS/meta/version";
+const versionNamePATH = "/jap/meta/version";
 
 export async function VERSION(){
     try {
