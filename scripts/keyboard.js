@@ -153,9 +153,6 @@ function afficherTableauObjets(tableau) {
 window.onload = async function() {
     console.log("loading window...");
     await LOAD_KEYBOARD(); // Assure que les données sont chargées avant d'ajouter l'écouteur
-    
-    console.log("test hira has a :" + keyboard.hiragana.has("a"));
-    /*
     // VERBES :
     console.log("verbes :\n");
     afficherMap(keyboard.verbes);
@@ -172,6 +169,9 @@ window.onload = async function() {
     let tmp = await LOAD("/jap/vocab/kanji.csv");
     console.log("TEST FINAL :\n");
     afficherTableauObjets(tmp);
+    
+    console.log("test hira has a :" + keyboard.hiragana.has("a"));
+    
     document.getElementById('input').addEventListener('input', updateTranslation);
-    */
+    
 };

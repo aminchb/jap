@@ -64,9 +64,11 @@ export async function LOAD(chemin) {
             throw new Error(`Erreur réseau : ${response.status} ${response.statusText}`);
         }
         const data = await response.text();
-        console.log("LOADED :\n");
         let tmp = PARSE(data);
+        /*
+        console.log("LOADED :\n");
         afficherTableauObjets(tmp);
+        */
         return tmp;
     } catch (error) {
         throw new Error(`Erreur lors du chargement distant : ${error.message}`);
