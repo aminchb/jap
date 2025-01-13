@@ -1,5 +1,49 @@
 // DONE : !
 
+
+
+const path_verbes = "/jap/vovab/verbes.csv";
+const path_kanji = "/jap/vovab/verbes.csv";
+const path_hira = "/jap/vovab/verbes.csv";
+const path_kata = "/jap/vovab/verbes.csv";
+
+export async function LOAD_VERBES(){
+    try {
+        let tmp = await LOAD(path_verbes);
+        return tmp;
+    } catch(error){
+        throw new Error("LOAD HIRA FAIL : " + error);
+    }
+}
+
+export async function LOAD_KANJI(){
+    try {
+        let tmp = await LOAD(path_kanji);
+        return tmp;
+    } catch(error){
+        throw new Error("LOAD HIRA FAIL : " + error);
+    }
+}
+
+export async function LOAD_HIRA(){
+    try {
+        let tmp = await LOAD(path_hira);
+        return tmp;
+    } catch(error){
+        throw new Error("LOAD HIRA FAIL : " + error);
+    }
+}
+
+export async function LOAD_KATA(){
+    try {
+        let tmp = await LOAD(path_kata);
+        return tmp;
+    } catch(error){
+        throw new Error("LOAD HIRA FAIL : " + error);
+    }
+}
+
+
 // CHARGE DATA pour QUIZ & CLAVIER :
 // @param chemin : 1 STRING indiquant le chemin du fichier csv.
 // =>return : un TABLEAU d'OBJETS QUELCONQUE*.

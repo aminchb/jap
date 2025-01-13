@@ -17,7 +17,7 @@ button > img {
 .response {
     height: 200px;
     width: 500px;
-    border-radius: 10px;
+    border-radius: 12px;
     background-color: black;
     border: 1px solid #555;
 }

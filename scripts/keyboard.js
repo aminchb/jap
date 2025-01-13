@@ -1,6 +1,6 @@
 // DONE.
 
-import { LOAD } from "./load.js";
+import { LOAD, LOAD_HIRA, LOAD_KANJI, LOAD_KATA, LOAD_VERBES } from "./load.js";
 import { TO_MAP } from "./load.js";
 
 
@@ -14,10 +14,10 @@ let keyboard = {
 
 async function LOAD_KEYBOARD(){
     console.log("loading keyboard...");
-    keyboard.hiragana = await TO_MAP(LOAD("vocab/hiragana.csv"));
-    keyboard.katakana = await TO_MAP(LOAD("vocab/katakana.csv"));
-    keyboard.kanji = await TO_MAP(LOAD("vocab/kanji.csv"));
-    keyboard.verbes = await TO_MAP(LOAD("vocab/verbes.csv"));
+    keyboard.hiragana = await TO_MAP(LOAD_HIRA());
+    keyboard.katakana = await TO_MAP(LOAD_KATA());
+    keyboard.kanji = await TO_MAP(LOAD_KANJI());
+    keyboard.verbes = await TO_MAP(LOAD_VERBES());
     console.log("keyboard loaded successfully :\n" + keyboard);
 }
 
