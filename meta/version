@@ -1,1 +1,1 @@
-V:6.1 LOAD absolute paths
+V:6.2 TEST to_map.load(path)

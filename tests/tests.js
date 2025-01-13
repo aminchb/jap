@@ -52,11 +52,38 @@ async function test_LOAD() {
     }
 }
 
+
+async function test_LOAD_MAP() {
+    console.log("LOAD MAP TEST :\n");
+    function afficherMap(map) {
+        console.log("Contenu de la Map :");
+        for (const [key, values] of map.entries()) {
+            console.log(`- Clé : ${key}`);
+            console.log("  Valeurs :");
+            values.forEach((value, index) => {
+                console.log(`    [${index}] ${value}`);
+            });
+        }
+    }
+    try {
+        let test = await TO_MAP(LOAD("../vocab/kanji.csv"));
+        //let test = TO_MAP(tmp);
+        console.log("test is equal to :\n");
+        afficherMap(test);
+    } catch (error) {
+        console.error("test failed :\n", error);
+    }
+}
+
+
 // TESTS CALLS :
 window.onload = async function() {
     await VERSION();
+    /*
     test_TO_MAP();
     await test_LOAD();
+    */
+    await test_LOAD_MAP();
 }
 
 /*
