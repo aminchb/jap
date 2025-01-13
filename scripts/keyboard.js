@@ -63,28 +63,34 @@ async function LOAD_KEYBOARD(){
 // !disclaimer : String*
 //               String* : Homonimes possibles.
 function TRADUIT(input){
+    console.log("TRADUCTION EN COURS de : " + input);
     // TRADUIT_MOT :
     // @param mot : un mot à traduire.
     // =>return : le mot traduit.
     function TRADUIT_MOT(mot){
         // si le mot est un verbe :
         if(keyboard.verbes.has(mot)){
+            console.log("le mot est un verbe ...\n");
             // HOIMONIMES POSSIBLES !!!!!!!
             return keyboard.verbes.get(mot)[1];
         }
         // si le mot est un kanji :
         else if(keyboard.kanji.has(mot)){
+            console.log("le mot est un kanji ...\n");
             // HOIMONIMES POSSIBLES !!!!!!!
             return keyboard.kanji.get(mot)[1];
         }
         // si le mot est un hiragana :
         else if(keyboard.hiragana.has(mot)){
+            console.log("le mot est un hiragana ...\n");
             return keyboard.hiragana.get(mot)[0];
         }
         // si le mot est un katakana :
         else if(keyboard.katakana.has(mot)){
+            console.log("le mot est un katakana ...\n");
             return keyboard.katakana.get(mot)[0];
         }
+        console.log("le mot n'est pas connu ...\n");
         // si le mot n'est pas trouvé :
         return mot;
     }
