@@ -2,10 +2,10 @@
 
 
 
-const path_verbes = "/jap/vovab/verbes.csv";
-const path_kanji = "/jap/vovab/verbes.csv";
-const path_hira = "/jap/vovab/verbes.csv";
-const path_kata = "/jap/vovab/verbes.csv";
+const path_verbes = "/jap/vocab/verbes.csv";
+const path_kanji = "/jap/vocab/verbes.csv";
+const path_hira = "/jap/vocab/verbes.csv";
+const path_kata = "/jap/vocab/verbes.csv";
 
 export async function LOAD_VERBES(){
     try {
