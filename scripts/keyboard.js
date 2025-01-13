@@ -3,6 +3,12 @@
 import { LOAD, LOAD_HIRA, LOAD_KANJI, LOAD_KATA, LOAD_VERBES } from "./load.js";
 import { TO_MAP } from "./load.js";
 
+// CONST : 
+const path_hira = "/jap/vocab/hiragana.csv";
+const path_kata = "/jap/vocab/katakana.csv";
+const path_kanji = "/jap/vocab/kanji.csv";
+const path_verbes = "/jap/vocab/verbes.csv";
+
 
 // VARIABLES :
 let keyboard = {
@@ -14,6 +20,19 @@ let keyboard = {
 
 async function LOAD_KEYBOARD(){
     console.log("loading keyboard...");
+    let hira = await LOAD(path_hira);
+    keyboard.hiragana = TO_MAP(hira);
+
+    let kata = await LOAD(path_kata);
+    keyboard.hiragana = TO_MAP(kata);
+
+    let kanji = await LOAD(path_kanji);
+    keyboard.hiragana = TO_MAP(kanji);
+
+    let verbes = await LOAD(path_verbes);
+    keyboard.hiragana = TO_MAP(verbes);
+
+    /*
     // HIRA :
     let hira = await LOAD_HIRA();
     console.log("HIRA :\n");
@@ -35,6 +54,7 @@ async function LOAD_KEYBOARD(){
     afficherTableauObjets(verbes);
     keyboard.verbes = TO_MAP(verbes);
     console.log("keyboard loaded successfully :\n" + keyboard);
+    */
 }
 
 // KEYBOARD : 
