@@ -1,1 +1,1 @@
-V:6.3 TEST load(path).to_map();
+V:6.4 LOAD absolute paths fix?

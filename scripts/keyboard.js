@@ -14,10 +14,18 @@ let keyboard = {
 
 async function LOAD_KEYBOARD(){
     console.log("loading keyboard...");
-    keyboard.hiragana = await TO_MAP(LOAD_HIRA());
-    keyboard.katakana = await TO_MAP(LOAD_KATA());
-    keyboard.kanji = await TO_MAP(LOAD_KANJI());
-    keyboard.verbes = await TO_MAP(LOAD_VERBES());
+    // HIRA :
+    let hira = await LOAD_HIRA();
+    keyboard.hiragana = TO_MAP(hira);
+    // KATA :
+    let kata = await LOAD_KATA();
+    keyboard.katakana = TO_MAP(kata);
+    // KANJI :
+    let kanji = await LOAD_KANJI();
+    keyboard.kanji = TO_MAP(kanji);
+    // VERBES :
+    let verbes = await LOAD_VERBES();
+    keyboard.verbes = TO_MAP(verbes);
     console.log("keyboard loaded successfully :\n" + keyboard);
 }
 
