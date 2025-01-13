@@ -1,1 +1,1 @@
-V:6.2 TEST to_map.load(path)
+V:6.3 TEST load(path).to_map();

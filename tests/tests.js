@@ -66,8 +66,8 @@ async function test_LOAD_MAP() {
         }
     }
     try {
-        let test = await TO_MAP(LOAD("../vocab/kanji.csv"));
-        //let test = TO_MAP(tmp);
+        let tmp = await LOAD("../vocab/kanji.csv");
+        let test = TO_MAP(tmp);
         console.log("test is equal to :\n");
         afficherMap(test);
     } catch (error) {
