@@ -167,9 +167,11 @@ window.onload = async function() {
     afficherMap(keyboard.katakana);
     // FINAL TEST : 
     let tmp = await LOAD("/jap/vocab/kanji.csv");
+    let test = TO_MAP(tmp);
     console.log("TEST FINAL :\n");
-    afficherTableauObjets(tmp);
-    
+    //afficherTableauObjets(tmp);
+    afficherMap(test);
+
     console.log("test hira has a :" + keyboard.hiragana.has("a"));
     
     document.getElementById('input').addEventListener('input', updateTranslation);
