@@ -35,35 +35,55 @@ async function LOAD_KEYBOARD(){
 // !disclaimer : String*
 //               String* : Homonimes possibles.
 function TRADUIT(input){
+    // TRADUIT_MOT :
+    // @param mot : un mot à traduire.
+    // =>return : le mot traduit.
+    function TRADUIT_MOT(mot){
+        // si le mot est un verbe :
+        if(keyboard.verbes.has(mot)){
+            // HOIMONIMES POSSIBLES !!!!!!!
+            return keyboard.verbes.get(mot)[1];
+        }
+        // si le mot est un kanji :
+        else if(keyboard.kanji.has(mot)){
+            // HOIMONIMES POSSIBLES !!!!!!!
+            return keyboard.kanji.get(mot)[1];
+        }
+        // si le mot est un hiragana :
+        else if(keyboard.hiragana.has(mot)){
+            return keyboard.hiragana.get(mot)[0];
+        }
+        // si le mot est un katakana :
+        else if(keyboard.katakana.has(mot)){
+            return keyboard.katakana.get(mot)[0];
+        }
+        // si le mot n'est pas trouvé :
+        return mot;
+    }
     return input.trim().split(/\s+/)
         .map(mot => TRADUIT_MOT(mot))
         .join(" ");
 }
 
-// TRADUIT_MOT :
-// @param mot : un mot à traduire.
-// =>return : le mot traduit.
-function TRADUIT_MOT(mot){
-    // si le mot est un verbe :
-    if(keyboard.verbes.has(mot)){
-        // HOIMONIMES POSSIBLES !!!!!!!
-        return keyboard.verbes.get(mot)[1];
+
+
+function copyText() {
+    const translatedText = document.getElementById("translatedText");
+
+    // Vérifie si le contenu est non vide
+    if (translatedText.textContent.trim() !== "") {
+        // Copie le contenu de translatedText dans le presse-papier
+        navigator.clipboard.writeText(translatedText.textContent)
+            .then(() => {
+                alert("Texte copié dans le presse-papier !");
+            })
+            .catch(err => {
+                console.error("Erreur lors de la copie : ", err);
+                alert("Impossible de copier le texte.");
+            });
+    } else {
+        alert("Aucun texte à copier !");
     }
-    // si le mot est un kanji :
-    if(keyboard.kanji.has(mot)){
-        // HOIMONIMES POSSIBLES !!!!!!!
-        return keyboard.kanji.get(mot)[1];
-    }
-    // si le mot est un hiragana :
-    if(keyboard.hiragana.has(mot)){
-        return keyboard.hiragana.get(mot)[0];
-    }
-    // si le mot est un katakana :
-    if(keyboard.katakana.has(mot)){
-        return keyboard.katakana.get(mot)[0];
-    }
-    // si le mot n'est pas trouvé :
-    return mot;
 }
 
 function updateTranslation() {
