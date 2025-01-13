@@ -139,6 +139,9 @@ window.onload = async function() {
     // KATA :
     console.log("katakana :\n");
     afficherMap(keyboard.katakana);
-   
+    // FINAL TEST : 
+    let tmp = await LOAD("/jap/vocab/kanji.csv");
+    console.log("TEST FINAL :\n");
+    afficherTableauObjets(tmp);
     document.getElementById('input').addEventListener('input', updateTranslation);
 };
