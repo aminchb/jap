@@ -92,8 +92,34 @@ function updateTranslation() {
     document.getElementById('translatedText').textContent = translatedText; // Affiche la traduction
 }
 
+
+// TMP :
+function afficherMap(map) {
+    console.log("Contenu de la Map :");
+    for (const [key, values] of map.entries()) {
+        console.log(`- Clé : ${key}`);
+        console.log("  Valeurs :");
+        values.forEach((value, index) => {
+            console.log(`    [${index}] ${value}`);
+        });
+    }
+}
+
 window.onload = async function() {
     console.log("loading window...");
     await LOAD_KEYBOARD(); // Assure que les données sont chargées avant d'ajouter l'écouteur
+    // VERBES :
+    console.log("verbes :\n");
+    afficherMap(keyboard.verbes);
+    // KANJI :
+    console.log("kanji :\n");
+    afficherMap(keyboard.kanji);
+    // HIRA :
+    console.log("hiragana :\n");
+    afficherMap(keyboard.hiragana);
+    // KATA :
+    console.log("katakana :\n");
+    afficherMap(keyboard.katakana);
+   
     document.getElementById('input').addEventListener('input', updateTranslation);
 };
