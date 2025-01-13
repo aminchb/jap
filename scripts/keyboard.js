@@ -16,15 +16,23 @@ async function LOAD_KEYBOARD(){
     console.log("loading keyboard...");
     // HIRA :
     let hira = await LOAD_HIRA();
+    console.log("HIRA :\n");
+    afficherMap(hira);
     keyboard.hiragana = TO_MAP(hira);
     // KATA :
     let kata = await LOAD_KATA();
+    console.log("KATA :\n");
+    afficherMap(kata);
     keyboard.katakana = TO_MAP(kata);
     // KANJI :
     let kanji = await LOAD_KANJI();
+    console.log("KANJI :\n");
+    afficherMap(kanji);
     keyboard.kanji = TO_MAP(kanji);
     // VERBES :
     let verbes = await LOAD_VERBES();
+    console.log("VERBES :\n");
+    afficherMap(verbes);
     keyboard.verbes = TO_MAP(verbes);
     console.log("keyboard loaded successfully :\n" + keyboard);
 }
