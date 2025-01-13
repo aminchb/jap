@@ -17,22 +17,22 @@ async function LOAD_KEYBOARD(){
     // HIRA :
     let hira = await LOAD_HIRA();
     console.log("HIRA :\n");
-    afficherMap(hira);
+    afficherTableauObjets(hira);
     keyboard.hiragana = TO_MAP(hira);
     // KATA :
     let kata = await LOAD_KATA();
     console.log("KATA :\n");
-    afficherMap(kata);
+    afficherTableauObjets(kata);
     keyboard.katakana = TO_MAP(kata);
     // KANJI :
     let kanji = await LOAD_KANJI();
     console.log("KANJI :\n");
-    afficherMap(kanji);
+    afficherTableauObjets(kanji);
     keyboard.kanji = TO_MAP(kanji);
     // VERBES :
     let verbes = await LOAD_VERBES();
     console.log("VERBES :\n");
-    afficherMap(verbes);
+    afficherTableauObjets(verbes);
     keyboard.verbes = TO_MAP(verbes);
     console.log("keyboard loaded successfully :\n" + keyboard);
 }
@@ -110,6 +110,17 @@ function afficherMap(map) {
         values.forEach((value, index) => {
             console.log(`    [${index}] ${value}`);
         });
+    }
+}
+
+function afficherTableauObjets(tableau) {
+    if (tableau && tableau.length > 0) {
+        tableau.forEach((obj, index) => {
+            console.log(`Objet ${index + 1}:`);
+            console.log(obj);
+        });
+    } else {
+        console.log("Tableau vide ou invalide");
     }
 }
 
