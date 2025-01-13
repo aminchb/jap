@@ -10,6 +10,8 @@ const path_kata = "/jap/vocab/verbes.csv";
 export async function LOAD_VERBES(){
     try {
         let tmp = await LOAD(path_verbes);
+        console.log("Tableau :\n");
+        afficherTableauObjets(tmp);
         return tmp;
     } catch(error){
         throw new Error("LOAD HIRA FAIL : " + error);
@@ -19,6 +21,8 @@ export async function LOAD_VERBES(){
 export async function LOAD_KANJI(){
     try {
         let tmp = await LOAD(path_kanji);
+        console.log("Tableau :\n");
+        afficherTableauObjets(tmp);
         return tmp;
     } catch(error){
         throw new Error("LOAD HIRA FAIL : " + error);
@@ -28,6 +32,8 @@ export async function LOAD_KANJI(){
 export async function LOAD_HIRA(){
     try {
         let tmp = await LOAD(path_hira);
+        console.log("Tableau :\n");
+        afficherTableauObjets(tmp);
         return tmp;
     } catch(error){
         throw new Error("LOAD HIRA FAIL : " + error);
@@ -37,6 +43,8 @@ export async function LOAD_HIRA(){
 export async function LOAD_KATA(){
     try {
         let tmp = await LOAD(path_kata);
+        console.log("Tableau :\n");
+        afficherTableauObjets(tmp);
         return tmp;
     } catch(error){
         throw new Error("LOAD HIRA FAIL : " + error);
@@ -56,7 +64,10 @@ export async function LOAD(chemin) {
             throw new Error(`Erreur réseau : ${response.status} ${response.statusText}`);
         }
         const data = await response.text();
-        return PARSE(data);
+        console.log("LOADED :\n");
+        let tmp = PARSE(data);
+        afficherTableauObjets(tmp);
+        return tmp;
     } catch (error) {
         throw new Error(`Erreur lors du chargement distant : ${error.message}`);
     }
@@ -144,4 +155,17 @@ export function TO_MAP(objets) {
         }
     }
     return map;
+}
+
+
+// TMP :
+function afficherTableauObjets(tableau) {
+    if (tableau && tableau.length > 0) {
+        tableau.forEach((obj, index) => {
+            console.log(`Objet ${index + 1}:`);
+            console.log(obj);
+        });
+    } else {
+        console.log("Tableau vide ou invalide");
+    }
 }
