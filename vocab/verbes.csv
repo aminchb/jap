@@ -1,0 +1,8 @@
+# STRUCTURE :
+kanji,kana,romaji,trad,picto
+# kanji : le mot en kanji
+# kana : la lecture du mot en hiragana
+# romaji : transcription phonétique du mot en alphabet latin
+# trad : traduction en français
+# picto : emoji ou pictogramme associé au mot
+

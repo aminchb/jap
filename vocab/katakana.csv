@@ -1,3 +1,8 @@
+# STRUCTURE :
+romaji,kana
+# romaji : la syllabe en caracteres latins
+# kana : le kana correspondant
+
 # KATAKANA
 
 A,ア

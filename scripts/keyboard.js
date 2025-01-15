@@ -24,13 +24,13 @@ async function LOAD_KEYBOARD(){
     keyboard.hiragana = TO_MAP(hira);
 
     let kata = await LOAD(path_kata);
-    keyboard.hiragana = TO_MAP(kata);
+    keyboard.katakana = TO_MAP(kata);
 
     let kanji = await LOAD(path_kanji);
-    keyboard.hiragana = TO_MAP(kanji);
+    keyboard.kanji = TO_MAP(kanji);
 
     let verbes = await LOAD(path_verbes);
-    keyboard.hiragana = TO_MAP(verbes);
+    keyboard.verbes = TO_MAP(verbes);
 
     /*
     // HIRA :
